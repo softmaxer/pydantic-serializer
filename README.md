@@ -21,6 +21,8 @@ class SampleJson(BaseModel):
 We can try and parse it with the decorator:
 
 ```py
+from pydantic_serializer import serialize
+
 @serialize(return_type=SampleJson)
 def func_returning_str() -> str:
     return '{"sample": "json"}'
