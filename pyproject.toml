@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pydantic-serializer"
+version = "0.1.0"
+description = "A decorator to serialize a string into a Pydantic model with error handling"
+authors = ["softmaxer <sriram.vadlamani@proton.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.8.2"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
