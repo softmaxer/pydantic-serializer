@@ -1,6 +1,6 @@
-# Pydantic serializer
+# Pydantic deserializer
 
-this is a simple decorator that can be used on functions that have a return type of `str`, To serialize it into a given Pydantic Model.
+this is a simple decorator that can be used on functions that have a return type of `str`, To deserialize it into a given Pydantic Model.
 
 ## Usage:
 
@@ -21,9 +21,9 @@ class SampleJson(BaseModel):
 We can try and parse it with the decorator:
 
 ```py
-from pydantic_serializer import serialize
+from pydantic_serializer import deserialize
 
-@serialize(return_type=SampleJson)
+@deserialize(return_type=SampleJson)
 def func_returning_str() -> str:
     return '{"sample": "json"}'
 ```
