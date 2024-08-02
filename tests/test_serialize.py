@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic_serializer import serialize
+from pydantic_serializer import deserialize
 from pydantic import BaseModel
 
 
@@ -23,27 +23,27 @@ class NestedObject(BaseModel):
     simple_model: SimpleModel
 
 
-@serialize(return_type=SimpleModel)
+@deserialize(return_type=SimpleModel)
 def return_correct_string():
     return '{"id": "1", "name": "John smith"}'
 
 
-@serialize(return_type=ModelWithOptionalParams)
+@deserialize(return_type=ModelWithOptionalParams)
 def correct_string_with_optional_model():
     return '{"id": "1", "name": "John smith"}'
 
 
-@serialize(return_type=ModelWithOptionalParams)
+@deserialize(return_type=ModelWithOptionalParams)
 def wrong_string():
     return '{"id: "1", "name": "John smith"}'
 
 
-@serialize(return_type=InheritedObject)
+@deserialize(return_type=InheritedObject)
 def inherited_string():
     return '{"id": "1", "name": "John Smith", "height": 1.5, "weight": 26}'
 
 
-@serialize(return_type=NestedObject)
+@deserialize(return_type=NestedObject)
 def nested_string():
     return '{"simple_model": {"id": "1", "name": "John smith"}}'
 

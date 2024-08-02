@@ -8,7 +8,7 @@ import json
 P = ParamSpec("P")  # the callable parameters
 
 
-def serialize(
+def deserialize(
     return_type: type[BaseModel],
 ) -> Callable[[Callable[P, str]], Callable[..., BaseModel | None]]:
     def wrapper(func: Callable[P, str]) -> Callable[..., BaseModel | None]:
