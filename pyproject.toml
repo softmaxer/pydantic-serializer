@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydantic-serializer"
-version = "0.1.0"
+version = "0.2.1"
 description = "A decorator to serialize a string into a Pydantic model with error handling"
 authors = ["softmaxer <sriram.vadlamani@proton.me>"]
 readme = "README.md"
